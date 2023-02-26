@@ -1,0 +1,23 @@
+syntax = "proto3";
+package service;
+option go_package = "github.com/maxrasky/crema/internal/service/proto;proto";
+
+service Service {
+  rpc Get(Key) returns (Item);
+  rpc Set(Item) returns (Null);
+  rpc Delete(Key) returns (Null);
+}
+
+
+message Null {
+}
+
+message Key {
+  string Key = 1;
+}
+
+message Item {
+  string Key = 1;
+  bytes Value = 2;
+}
+
