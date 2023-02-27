@@ -5,3 +5,10 @@ services:
     image: 'bitnami/memcached:latest'
     ports:
       - "11211:11211"
+  app:
+    build:
+      context: .
+    ports:
+      - "8085:8085"
+    depends_on:
+      - memcached

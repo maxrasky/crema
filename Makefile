@@ -1,5 +1,6 @@
 .PHONY: test
 test:
+	@docker compose up -d memcached
 	@go test ./... -cover -race -count=1
 
 .PHONY: fmt
@@ -15,6 +16,10 @@ proto:
 
 .PHONY: run
 run:
-	go run ./cmd
+	docker compose up
+
+.PHONY: drop
+drop:
+	docker rmi -f crema-app
 
 
