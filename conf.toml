@@ -6,3 +6,4 @@ port=":8085"
 
 [flat]
 gauge="test_value"
+flake="snow"
