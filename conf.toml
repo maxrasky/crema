@@ -3,3 +3,8 @@ address="memcached:11211"
 
 [app]
 port=":8085"
+
+[flat]
+gauge="test_value"
+flake="snow"
+bake="bread"
